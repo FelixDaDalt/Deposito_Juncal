@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Deposito Juncal App</title>
+    <meta name="description" content="Mobilekit HTML Mobile UI Kit">
+    <meta name="keywords" content="bootstrap 5, mobile template, cordova, phonegap, mobile, html" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+    <!-- App Header -->
+    <?php include('assets/includes/header.html'); ?>
+    <!-- * App Header -->
+
+    <!-- Search Component -->
+    <?php include('assets/includes/search.html'); ?>
+    <!-- * Search Component -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="header-large-title">
+            <h1 class="title">Depósito Juncal</h1>
+            <h4 class="subtitle" id="welcome"></h4>
+        </div>
+
+        <div class="section full mt-3 mb-3">
+
+            <!-- carousel multiple -->
+            <div class="carousel-multiple splide">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <a href="solicitudes.html">
+                            <div class="card">
+                                <img src="assets/img/camion_icono.jpg" class="card-img-top" alt="Solicitud de Camiones">
+                                <div class="card-body pt-2">
+                                    <h4 class="mb-0">Solicitud de Camiones</h4>
+                                </div>
+                            </div>
+                        </a>
+                        </li>
+                        <li class="splide__slide">
+                            <a href="precios.html">
+                            <div class="card">
+                                <img src="assets/img/cotizacion.jpg" class="card-img-top" alt="Lista de Precios">
+                                <div class="card-body pt-2">
+                                    <h4 class="mb-0">Lista de Precios</h4>
+                                </div>
+                            </div>
+                        </a>
+                        </li>
+
+                        <a href="cuenta.html">
+                        <li class="splide__slide">
+                            <div class="card">
+                                <img src="assets/img/cuenta-corriente.png" class="card-img-top" alt="Cuenta Corriente">
+                                <div class="card-body pt-2">
+                                    <h4 class="mb-0">Cuenta Corriente</h4>
+                                </div>
+                            </div>
+                        </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <!-- * carousel multiple -->
+        </div>
+        <!-- app footer -->
+        <?php include('assets/includes/footer.html'); ?>
+        <!-- * app footer -->
+
+    </div>
+    <!-- * App Capsule -->
+
+    <!-- welcome notification  -->
+    <?php include('assets/includes/notification.html'); ?>
+    <!-- * welcome notification -->
+   
+    <!-- ============== Js Files ==============  -->
+    <?php include('assets/includes/js.html'); ?>
+   
+    <!-- App Bottom Menu -->
+    <?php include('assets/includes/bottom.html'); ?>
+    <!-- * App Bottom Menu -->
+
+    <!-- App Sidebar -->
+    <?php include('assets/includes/sidebar.html'); ?>
+    <!-- * App Sidebar -->
+    <script src="assets/js/base.js"></script>
+    
+
+</body>
+
+</html>

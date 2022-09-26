@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Deposito Juncal App</title>
+    <meta name="description" content="Mobilekit HTML Mobile UI Kit">
+    <meta name="keywords" content="bootstrap 5, mobile template, cordova, phonegap, mobile, html" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pagination.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+
+<body>
+
+        <!-- loader -->
+        <div id="loader">
+            <div class="spinner-border text-primary" role="status"></div>
+        </div>
+        <!-- * loader -->
+    
+           <!-- App Header -->
+           <?php include('assets/includes/header.html'); ?>
+           <!-- * App Header -->
+       
+           <!-- Search Component -->
+           <?php include('assets/includes/search.html'); ?>
+           <!-- * Search Component -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="section full mt-1 mb-2">
+            <div class="section-title">Solicitudes de Transporte</div>
+            <div aling="center">
+                <button type="button" class="btn btn-primary shadowed  me-1 mb-1" data-bs-toggle="offcanvas"
+                data-bs-target="#actionSheetForm" onclick=optionValues()>Nueva Solicitud</button>
+            </div>
+            <!-- Form Action Sheet -->
+        <div class="offcanvas offcanvas-bottom action-sheet" tabindex="-1" id="actionSheetForm">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Complete la solicitud de Transporte</h5>
+            </div>
+            <div class="offcanvas-body">
+                <div class="action-sheet-content">
+                    <form>
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="form-label" for="fecha">Fecha Tentativa</label>
+                                <input type="date" required class="form-control" id="fecha" placeholder="Ingrese Fecha Tentativa">
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                            <div class="input-info">Indique Fecha tentativa en que deba enviarse el transporte</div>
+                        </div>
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="form-label" for="tipo">Tipo de Solicitud</label>
+                                <select class="form-control form-select" id="optionTipo">
+                                 <!-- optionValues() --> 
+                                </select>
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                            <div class="input-info">Indique el tipo de Solicitud</div>
+                        </div>
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="form-label" for="transporte">Tipo de Transporte</label>
+                                <select class="form-control form-select" id="optionTransporte">
+                                <!-- optionValues() -->     
+                                </select>
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                            <div class="input-info">Indique el tipo de Transporte que requiere</div>
+                        </div>
+
+                        <div class="form-group basic">
+                            <div class="input-wrapper">
+                                <label class="form-label" for="adicional">Notas Adicionales</label>
+                                <textarea id="adicional" rows="2" class="form-control"></textarea>
+                                <i class="clear-input">
+                                    <ion-icon name="close-circle"></ion-icon>
+                                </i>
+                            </div>
+                            <div class="input-info">Opcional</div>
+                        </div>
+                        <div class="form-group basic">
+                            <button type="button" class="btn btn-primary btn-block" data-bs-dismiss="offcanvas" onclick=generarSolicitud()>Generar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- * Form Action Sheet -->
+
+            
+            <div class="wide-block p-0">
+                <div class="content-header mb-05" id="null" >
+                    No tiene solicitudes vigentes
+                </div>
+                <div class="table-responsive" id="solicitudes">
+                    <table class="table" id="listaSolicitudes">
+                        <thead>
+                            <tr>
+                                <th scope="col">Número</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Hora</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Transporte</th>
+                                <th scope="col">Fecha Prevista</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Ver</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </div>
+
+ <!-- app footer -->
+ <?php include('assets/includes/footer.html'); ?>
+ <!-- * app footer -->
+
+</div>
+<!-- * App Capsule -->
+
+<!-- welcome notification  -->
+<?php include('assets/includes/notification.html'); ?>
+<!-- * welcome notification -->
+
+<!-- ============== Js Files ==============  -->
+<?php include('assets/includes/js.html'); ?>
+
+<!-- App Bottom Menu -->
+<?php include('assets/includes/bottom.html'); ?>
+<!-- * App Bottom Menu -->
+
+<!-- App Sidebar -->
+<?php include('assets/includes/sidebar.html'); ?>
+<!-- * App Sidebar -->
+<script src="assets/js/base.js"></script>
+<script src="assets/js/pagination.js"></script>
+<script src="assets/js/solicitudes.js"></script>
+<script type="text/javascript">
+ mostrarListaSolicitudes();
+ cargarListas()
+</script>
+
+
+</body>
+
+</html>

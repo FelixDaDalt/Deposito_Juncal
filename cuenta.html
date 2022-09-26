@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Deposito Juncal App</title>
+    <meta name="description" content="Mobilekit HTML Mobile UI Kit">
+    <meta name="keywords" content="bootstrap 5, mobile template, cordova, phonegap, mobile, html" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pagination.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+
+<body>
+
+     <!-- loader -->
+     <div id="loader">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <!-- * loader -->
+
+       <!-- App Header -->
+       <?php include('assets/includes/header.html'); ?>
+       <!-- * App Header -->
+   
+       <!-- Search Component -->
+       <?php include('assets/includes/search.html'); ?>
+       <!-- * Search Component -->
+
+    <!-- App Capsule -->
+    <div id="appCapsule">
+
+        <div class="section full mt-1 mb-2">
+            <div class="section-title">Cuenta Corriente: Diego Mendoza</div>
+            <div class="content-header mb-05">
+                Saldo a la Fecha: $3500,00
+            </div>
+            <div class="wide-block p-0">
+                <div class="content-header mb-05" id="null" >
+                    Nada para mostrar
+                </div>
+                <div class="table-responsive" id="cuentaCorriente">
+                    <table class="table" id="listaCuentaCorriente">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Hora</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Detalle</th>
+                                <th scope="col">Peso</th>
+                                <th scope="col">Importe</th>
+                                <th scope="col">Saldo</th>   
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="paginationjs paginationjs-small" id="pagination"></div>
+            </div>
+        </div>
+
+
+
+
+        
+
+        
+
+       <!-- app footer -->
+    <?php include('assets/includes/footer.html'); ?>
+    <!-- * app footer -->
+
+   </div>
+   <!-- * App Capsule -->
+  
+   <!-- welcome notification  -->
+   <?php include('assets/includes/notification.html'); ?>
+   <!-- * welcome notification -->
+  
+   <!-- ============== Js Files ==============  -->
+   <?php include('assets/includes/js.html'); ?>
+  
+   <!-- App Bottom Menu -->
+   <?php include('assets/includes/bottom.html'); ?>
+   <!-- * App Bottom Menu -->
+
+   <!-- App Sidebaaaar -->
+   <?php include('assets/includes/sidebar.html'); ?>
+   <!-- * App Sidebar -->
+   <script src="assets/js/base.js"></script>
+   <script src="assets/js/pagination.js"></script>
+   <script src="assets/js/cuenta.js"></script>
+   <script type="text/javascript">
+    mostrarCuentaCorriente()
+  </script>
+
+
+</body>
+
+</html>

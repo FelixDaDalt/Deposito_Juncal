@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Deposito Juncal App</title>
+    <meta name="description" content="Mobilekit HTML Mobile UI Kit">
+    <meta name="keywords" content="bootstrap 5, mobile template, cordova, phonegap, mobile, html" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="manifest" href="__manifest.json">
+</head>
+
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+     <div class="spinner-border text-primary" role="status"></div>
+ </div>
+ <!-- * loader -->
+
+    <!-- App Header -->
+    <?php include('assets/includes/header.html'); ?>
+    <?php include('assets/includes/print-download.html'); ?>
+    <!-- * App Header -->
+
+    <!-- Search Component -->
+    <?php include('assets/includes/search.html'); ?>
+    <!-- * Search Component -->
+
+
+    <!-- App Capsule -->
+    <div id="appCapsule" class="pb-2">
+
+        <div class="section full mt-3" >
+            <div class="invoice">
+                <div class="invoice-page-header">
+                    <div class="invoice-logo">
+                        <img src="assets/img/logo.jpg" alt="logo">
+                    </div>
+                    <div class="invoice-id">#OPERACION: <span id="idOperacion"></span></div>
+                </div>
+                <div class="invoice-person mt-4">
+                    <div class="invoice-to">
+                        <h4><b>Depósito Juncal</b></h4>
+                        <p>San Lorenzo 6040</p>
+                        <p>Tel/Fax: (0223) 477-1829<br> 7600 - Mar del Plata</p>
+                        <p>www.depositojuncal.com.ar</p>
+                    </div>
+                    <div class="invoice-from">
+                        <h4><p><span id="clienteNombre"></span></p></h4>
+                        <p>Código de Cliente: <span id="clienteId"></span></p>
+                        <p><span id="fecha"></span><br><span id="hora"></span></p>
+                        <p>Estado: <span id="Estado"></span></p>
+                    </div>
+                </div>
+                <div class="invoice-detail mt-4">
+                    <div class="table-responsive">
+                        <table class="table" id="listaOperacion">
+                            <thead>
+                                <tr>
+                               
+                                    <td>Producto</td>
+                                    <td>Peso</td>
+                                    <td>Unitario</td>
+                                    <td>SubTotal</td>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="invoice-total mt-4">
+                    <ul class="listview transparent simple-listview">
+                        
+                        <li>Total Operación<span class="totaltext text-primary" id="totalOperacion"></span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+       
+
+<!-- app footer -->
+<?php include('assets/includes/footer.html'); ?>
+<!-- * app footer -->
+
+</div>
+<!-- * App Capsule -->
+
+<!-- welcome notification  -->
+<?php include('assets/includes/notification.html'); ?>
+<!-- * welcome notification -->
+
+<!-- ============== Js Files ==============  -->
+<?php include('assets/includes/js.html'); ?>
+
+<!-- App Bottom Menu -->
+<?php include('assets/includes/bottom.html'); ?>
+<!-- * App Bottom Menu -->
+
+<!-- App Sidebar -->
+<?php include('assets/includes/sidebar.html'); ?>
+<!-- * App Sidebar -->
+<script src="assets/js/base.js"></script>
+    <script src="assets/js/operacion.js"></script>
+    <script type="text/javascript">
+     verOperacion();
+    </script>
+
+</body>
+
+</html>

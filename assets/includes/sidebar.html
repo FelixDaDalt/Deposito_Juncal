@@ -1,0 +1,113 @@
+<script src="assets/js/sidebar.js"></script>
+<script type="text/javascript">
+    loadData();
+ </script>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarPanel">
+    <div class="offcanvas-body">
+        <!-- profile box -->
+        <div class="profileBox">
+            <div class="image-wrapper">
+                <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged rounded">
+            </div>
+            <div class="in" id="userData">
+                <p id="userEmail"></p>
+                <div class="text-muted">
+                    <strong><p id="userName"></p></strong>
+                    
+                </div>
+            </div>
+            <a href="#" class="close-sidebar-button" data-bs-dismiss="offcanvas">
+                <ion-icon name="close"></ion-icon>
+            </a>
+        </div>
+        <!-- * profile box -->
+
+        <ul class="listview flush transparent no-line image-listview mt-2">
+            <li>
+                <a href="home.html" class="item">
+                    <div class="icon-box bg-primary">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </div>
+                    <div class="in">
+                        Home
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="solicitudes.html" class="item">
+                    <div class="icon-box bg-primary">
+                        <ion-icon name="hand-left-outline"></ion-icon>
+                    </div>
+                    <div class="in">
+                        Solicitudes
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="precios.html" class="item">
+                    <div class="icon-box bg-primary">
+                        <ion-icon name="list-outline"></ion-icon>
+                    </div>
+                    <div class="in">
+                        <div>Precios</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="cuenta.html" class="item">
+                    <div class="icon-box bg-primary">
+                        <ion-icon name="calculator"></ion-icon>
+                    </div>
+                    <div class="in">
+                        <div>Cuenta</div>
+                        <span class="badge badge-danger">5</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <div class="item">
+                    <div class="icon-box bg-primary">
+                        <ion-icon name="moon-outline"></ion-icon>
+                    </div>
+                    <div class="in">
+                        <div>Modo Nocturno</div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input dark-mode-switch" type="checkbox" id="darkmodesidebar">
+                            <label class="form-check-label" for="darkmodesidebar"></label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:onclick=logout()"  class="item">
+                    <div class="icon-box bg-primary">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </div>
+                    <div class="in">
+                        <div>Salir</div>
+                        <span class="badge badge-danger">5</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        
+    </div>
+    <!-- sidebar buttons -->
+    <div class="sidebar-buttons">
+        <a href="#" class="button">
+            <ion-icon name="person-outline"></ion-icon>
+        </a>
+        <a href="#" class="button">
+            <ion-icon name="archive-outline"></ion-icon>
+        </a>
+        <a href="#" class="button">
+            <ion-icon name="settings-outline"></ion-icon>
+        </a>
+        <a href="#" class="button">
+            <ion-icon name="log-out-outline"></ion-icon>
+        </a>
+    </div>
+    <!-- * sidebar buttons -->
+</div>
+
