@@ -3,7 +3,7 @@ async function cuentaCorriente(){
     idServicio = {
         "id_servicio":1
     }
-    const respuesta = await request('Get','cc/cuenta_corriente/19',idServicio)
+    const respuesta = await request('Get','cc/cuenta_corriente/'+clienteId,idServicio)
     return respuesta
 }
 
