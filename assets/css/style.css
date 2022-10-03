@@ -409,6 +409,7 @@ button:hover, button:active, button:focus {
   display: block;
   margin-top: 1px;
   margin-bottom: 3px;
+  pointer-events: none;
 }
 
 .appBottomMenu .item .action-button {
@@ -563,7 +564,7 @@ button:hover, button:active, button:focus {
   padding: 6px 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   color: #141515;
   font-weight: 500;
 }
@@ -1414,6 +1415,7 @@ figure.codebox code {
 }
 
 ion-icon {
+  pointer-events: none;
   --ionicon-stroke-width: 32px;
 }
 

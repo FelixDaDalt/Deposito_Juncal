@@ -13,7 +13,15 @@ async function listaSolicitudes(){
 async function mostrarListaSolicitudes(){
     $("#listaSolicitudes>tbody").html('<td name="loading" colspan="8" style="text-align: center"><img src="assets/img/loading-table.gif" width="10%" height="10%"></td>')
     $('#null').hide()
-    const respuesta = await listaSolicitudes()
+    var respuesta = null;
+    try {
+    respuesta = await listaSolicitudes();
+    } catch(error){
+        $('#solicitudes').hide();
+        $('#null').show();
+        $('#null').html('Error al mostrar los datos: '+error.message);
+        return
+    }
     const obj = await respuesta.data;
     if(obj.length == 0){
         $('#solicitudes').hide()
@@ -36,7 +44,8 @@ async function mostrarListaSolicitudes(){
                     content += `<td>${item.Transporte}</td>`;
                     content += `<td>${item.Fecha_Prevista}</td>`;
                     content += `<td>`+(item.Estado == "1" ? '<span class="badge badge-warning">Pendiente</span>' : '<span class="badge badge-primary">Finalizada</span>')+`</td>`;
-                    content += `<td><i class='bi bi-trash' onclick='eliminarSolicitud(${item.ID})'></i></td></tr>`;
+                    content += `<td>
+                    <span id="boot-icon" class="bi bi-trash" style="font-size: 24px;" onclick='eliminarSolicitud(${item.ID})'></span></td></tr>`;
                 });
                 $("#listaSolicitudes>tbody").html(content)
         }
@@ -82,8 +91,8 @@ async function generarSolicitud(){
             "adicional":adicional
         })
         const respuesta = await request('Post','solicitudes/nueva_solicitud/'+clienteId,solicitud)
-        if(respuesta == 1){
-            mostrarListaSolicitudes()
+        if(respuesta === 1){
+            location.reload();
             return
         }
 

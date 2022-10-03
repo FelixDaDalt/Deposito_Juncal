@@ -21,8 +21,8 @@ async function request(metodo,ruta,data){
                 window.location.assign("./index.html")
                 return
             }else{
-                alert('Error: ' + jqXHR.responseText)
-                return      
+                alert('Error: ' + jqXHR.responseText + jqXHR.status)
+                return     
             }
         },
         complete: function() {

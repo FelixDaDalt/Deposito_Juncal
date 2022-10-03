@@ -4,15 +4,26 @@ async function cuentaCorriente(){
         "id_servicio":1
     }
     const respuesta = await request('Get','cc/cuenta_corriente/'+clienteId,idServicio)
+    alert(respuesta)
     return respuesta
 }
 
 async function mostrarCuentaCorriente(){
     $("#listaCuentaCorriente>tbody").html('<td name="loading" colspan="8" style="text-align: center"><img src="assets/img/loading-table.gif" width="10%" height="10%"></td>')
     $('#null').hide()
-    const respuesta = await cuentaCorriente()
+    const cliente = await me()
+    $("#clienteNombre").html(cliente.real_name)
+    var respuesta = null;
+    try {
+    respuesta = await cuentaCorriente()
+    } catch(e) {
+        $('#cuentaCorriente').hide()
+        $('#null').show()
+        $('#null').html('Error al mostrar los datos: '+ e.message)
+        return
+    }
     const obj = await respuesta.data;
-    if(obj.length == 0)
+    if(obj.length == 0 )
     {
         $('#cuentaCorriente').hide()
         $('#null').show()

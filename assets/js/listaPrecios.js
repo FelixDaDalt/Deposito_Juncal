@@ -9,8 +9,22 @@ async function listaPrecios(){
 
 async function mostrarListaPrecios(){
     $("#listaPrecios>tbody").html('<td name="loading" colspan="4" style="text-align: center"><img src="assets/img/loading-table.gif" width="10%" height="10%"></td>')
-    const respuesta = await listaPrecios()
+    $('#null').hide()
+    var respuesta = null;
+    try {
+    respuesta = await listaPrecios()
+    }catch (e){
+        $('#precios').hide();
+        $('#null').show();
+        $('#null').html('Error al mostrar los datos: '+error.message);
+        return
+    }
     const obj = await respuesta.data;
+    if(obj.length == 0){
+        $('#precios').hide()
+        $('#null').show()
+        return
+    }
 
     $("#listaPrecios>tbody").html('')
     let container = $('#pagination');
